@@ -5,7 +5,7 @@ const nodemailer = require('nodemailer');
 module.exports = class Email {
   constructor(user, url) {
     this.to = user.email;
-    this.fistName = user.name.split(' ')[0];
+    this.firstName = user.name.split(' ')[0];
     this.url = url;
     this.from = `Nwodoh Daniel <${process.env.EMAIL_FROM}>`;
   }
@@ -37,7 +37,7 @@ module.exports = class Email {
     const html = pug.renderFile(
       `${__dirname}/../views/emails/${template}.pug`,
       {
-        firstName: this.fistName,
+        firstName: this.firstName,
         url: this.url,
         subject,
       }

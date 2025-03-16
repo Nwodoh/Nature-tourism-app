@@ -34,7 +34,7 @@ const server = app.listen(port, () => {
 
 // Safety Net
 process.on('unhandledRejection', (err) => {
-  console.log(err.name, err.message);
+  console.log(err);
   console.log('UNHANDLED REJECTION 💥 - shutting down...');
 
   server.close(() => process.exit(1));
